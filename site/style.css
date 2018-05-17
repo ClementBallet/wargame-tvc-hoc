@@ -1,0 +1,34 @@
+.screendisplay{
+  display: flex;
+  flex-direction: column;
+  width: 1366px;
+  height: 768px;
+  margin:0 auto;
+}
+
+.title {
+  width:100%;
+  height:30%;
+  background-color: grey;
+
+}
+
+.names {
+  width:100%;
+  height:15%;
+  background-color: black;
+
+}
+
+.persons {
+  width:100%;
+  height:30%;
+  background-color: white;
+
+}
+.start {
+  width:100%;
+  height:18%;
+  background-color: green;
+
+}
