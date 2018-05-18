@@ -4,15 +4,67 @@
     <meta charset="utf-8">
     <title>War game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="buttons.css">
   </head>
   <body>
+    <!-- BOF Div globale -->
     <div class="screendisplay">
-      <div class="title">title</div>
-      <div class="names">names</div>
-      <div class="persons">persons</div>
-      <div class="start">start</div>
+
+      <div class="title">
+
+      </div>
+      <div class="names">
+          <div class="formSize" id="firstPerson">
+            <form id='myForm2'>
+                <label>Joueur 1:</label>
+                <input type="text" id="firstname">
+            </form>
+
+
+          </div>
+          <div class="formSize" id="secondPerson">
+            <form id='myForm2'>
+                Joueur 2:
+                <input type="text" id="secondname">
+            </form>
+          </div>
+
+      </div>
+      <!-- div persons -->
+      <div class="persons">
+        <ul id="character-selector" >
+            <li>
+              <a href="#">
+                <img src="joueur1.jpg" alt="jambon" class="character" data-character="P1">
+                <p>Perso 1</p>
+              </a>
+            </li>
+            <li>
+              <a href=""  class="character" data-character="P2">
+                <img src="joueur2.png" alt="">
+                <p>Perso 2</p>
+              </a>
+            </li>
+
+            <li>
+              <a href="" class="character" data-character="P3">
+                <img src="joueur3.jpg" alt="">
+                <p>Perso 3</p>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="character" data-character="P4">
+                <img src="joueur4.png" alt="">
+                <p>Perso 4</p>
+              </a>
+            </li>
+        </ul>
+      </div>
+      <div class="start">
+          <a href="" class="eightbit-btn">Play Game</a>
+      </div>
 
     </div>
-
+    <!-- EOF Div globale -->
   </body>
 </html>
