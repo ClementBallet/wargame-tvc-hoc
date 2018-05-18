@@ -1,70 +1,84 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>War game</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mega War 2</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="buttons.css">
-  </head>
-  <body>
-    <!-- BOF Div globale -->
-    <div class="screendisplay">
+</head>
+<body onload="init()">
+  <div id="app">
+    <section id="homepage">
 
-      <div class="title">
-
-      </div>
-      <div class="names">
+      <div class="title"><h1>Mega War 2</h1></div>
+      <!--BOF div Names  -->
+        <div class="names">
           <div class="formSize" id="firstPerson">
-            <form id='myForm2'>
-                <label>Joueur 1:</label>
-                <input type="text" id="firstname">
-            </form>
+          <form id='myForm2'>
+          <label>Player 1:</label>
+          <input type="text" id="firstname">
+          </form>
 
 
           </div>
           <div class="formSize" id="secondPerson">
-            <form id='myForm2'>
-                Joueur 2:
-                <input type="text" id="secondname">
-            </form>
+          <form id='myForm2'>
+          Player 2:
+          <input type="text" id="secondname">
+          </form>
           </div>
 
-      </div>
-      <!-- div persons -->
-      <div class="persons">
-        <ul id="character-selector" >
-            <li>
-              <a href="#">
-                <img src="joueur1.jpg" alt="jambon" class="character" data-character="P1">
-                <p>Perso 1</p>
-              </a>
-            </li>
-            <li>
-              <a href=""  class="character" data-character="P2">
-                <img src="joueur2.png" alt="">
-                <p>Perso 2</p>
-              </a>
-            </li>
+        </div>
+      <!--EOF Names -->
 
-            <li>
-              <a href="" class="character" data-character="P3">
-                <img src="joueur3.jpg" alt="">
-                <p>Perso 3</p>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="character" data-character="P4">
-                <img src="joueur4.png" alt="">
-                <p>Perso 4</p>
-              </a>
-            </li>
-        </ul>
-      </div>
+      <!--BOF div Personnages  -->
+      <div class="persons">
+          <h2>Sélection du personnage</h2>
+      <ul id="character-selector" >
+        <li id="hitman">
+          <a href="#" class="character" data-character="P1">
+            <img src="img/hitman.png" alt="Perso 1">
+          </a>
+        </li>
+        <li id="robot">
+          <a href="#" class="character" data-character="P2">
+            <img src="img/robot.png" alt="Perso2">
+          </a>
+        </li>
+        <li id="soldier">
+          <a href="#" class="character" data-character="P3">
+              <img src="img/soldier.png" alt="Perso3">
+          </a>
+        </li>
+        <li id="zombie">
+          <a href="#" class="character" data-character="P4">
+            <img src="img/zombie.png" alt="Perso4">
+          </a>
+        </li>
+      </ul>
+    </div>
+<!-- EOF Div Personages -->
+
+<!--BOF Div Start  -->
       <div class="start">
           <a href="" class="eightbit-btn">Play Game</a>
       </div>
 
+  <!--EOF Div Personnages  -->
+
+    </section>
+    <section id="game">
+
+    </section>
     </div>
-    <!-- EOF Div globale -->
-  </body>
+
+    <script type="text/javascript" src="app/js/UIHomePage.js"></script>
+    <script type="text/javascript" src="app/js/app.js"></script>
+    <script type="text/javascript">
+        function init(){
+            const app = new App();
+            app.init();
+        }
+    </script>
+</body>
 </html>
