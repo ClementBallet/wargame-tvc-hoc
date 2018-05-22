@@ -3,6 +3,10 @@
   height: 800px;
 }
 
+#map {
+  border-collapse: collapse;
+}
+
 .spriteSheet {
   background-image: url('../../assets/allSprites_default1.png');
   background-repeat: no-repeat;
@@ -547,7 +551,3 @@
   margin: 0;
   border: 0;
 }
-
- #map {
-   border-collapse: collapse;
- }
