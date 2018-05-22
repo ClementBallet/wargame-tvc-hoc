@@ -11,8 +11,8 @@ class App {
         this.UIhomePage = new UIHomePage(this);
         this.Map = new Map(this);
 
-        this.player1 = new character('hitmanIdle', 80, 80, "rotate90");
-        this.player2 = new character('zombieIdle', 1150, 645, "rotateLess90");
+        this.player1 = new character('hitmanIdle', 'hitmanMove', 80, 80, "rotate90");
+        this.player2 = new character('zombieIdle', 'zombieMove', 1150, 645, "rotateLess90");
 
         this.controlP1 = new controller(this.player1, 81, 90, 68, 83, 32);
         this.controlP2 = new controller(this.player2, 37, 38, 39, 40, 96);

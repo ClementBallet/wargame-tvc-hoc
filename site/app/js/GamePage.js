@@ -7,12 +7,13 @@ class controller {
     this.down = down;
     this.action = action;
 
+
     document.addEventListener('keydown', this.onKeyDown.bind(this));
     document.addEventListener('keyup', this.onKeyUp.bind(this));
   }
 
   onKeyDown(event) {
-    switch (event.keycode) {
+    switch (event.keyCode) {
       case this.left:
         this.player.moveLeft = true;
         break;
@@ -32,7 +33,7 @@ class controller {
   }
 
   onKeyUp(event) {
-    switch (event.keycode) {
+    switch (event.keyCode) {
       case this.left:
         this.player.moveLeft = false;
         break;

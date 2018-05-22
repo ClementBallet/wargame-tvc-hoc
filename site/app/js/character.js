@@ -1,6 +1,7 @@
 class character {
-  constructor(className, startPositionX, startPositionY, startRotateClassName) {
-      this.className = className;
+  constructor(classNameIdle, classNameMove, startPositionX, startPositionY, startRotateClassName) {
+      this.className = classNameIdle;
+      this.classNameMove = classNameMove;
       this.startPositionX = startPositionX;
       this.startPositionY = startPositionY;
       this.startRotateClassName = startRotateClassName;
@@ -30,66 +31,75 @@ class character {
 ///////////////////////////////// VARIABLES /////////////////////////////////
 
     //this.character = document.getElementByClassName(this.id)
-    const step = 5;
+    const step = 4;
+    let PositionX = this.characterBody.offsetLeft;
+    let PositionY = this.characterBody.offsetTop;
+    let clearClassRotate = this.characterBody.classList.remove("rotate90", "rotate180", "rotateLess90", "rotate45", "rotate135", "rotateLess45", "rotateLess135");
 
 ///////////////////////////////// ANIMATION /////////////////////////////////
 
 
-
     if (this.moveLeft == true || this.moveUp == true || this.moveRight == true || this.moveDown == true) {
-      this.characterBody.classList.remove(this.character + "Idle")
-      this.characterBody.classList.add(this.character + "Move")
+      this.characterBody.classList.remove(this.className)
+      this.characterBody.classList.add(this.classNameMove)
     }
 
     if (this.moveLeft == false || this.moveUp == false || this.moveRight == false || this.moveDown == false) {
-      this.characterBody.classList.remove(this.character + "Move")
-      this.characterBody.classList.add(this.character + "Idle")
+      this.characterBody.classList.remove(this.classNameMove)
+      this.characterBody.classList.add(this.className)
     }
 
 //////////////////////////// MOVEMENT & ROTATION ////////////////////////////
 
     if (this.moveUp == true) {
+      clearClassRotate
       this.characterBody.classList.add("rotateLess90");
-      this.characterBody.style.top = this.startPositionY - step + "px";
+      this.characterBody.style.top = (PositionY - step) + "px";
     }
 
     if (this.moveUp == true && this.moveLeft == true) {
+      clearClassRotate
       this.characterBody.classList.add("rotateLess135");
-      this.characterBody.style.top = this.startPositionY - step + "px";
-      this.characterBody.style.left = this.startPositionX - step + "px";
+      this.characterBody.style.top = (PositionY - step) + "px";
+      this.characterBody.style.left = (PositionX - step) + "px";
     }
 
     if (this.moveUp == true && this.moveRight == true) {
+      clearClassRotate
       this.characterBody.classList.add("rotateLess45");
-      this.characterBody.style.top = this.startPositionY - step + "px";
-      this.characterBody.style.left = this.startPositionX + step + "px";
+      this.characterBody.style.top = (PositionY - step) + "px";
+      this.characterBody.style.left = (PositionX + step) + "px";
     }
 
     if (this.moveLeft == true) {
+      clearClassRotate
       this.characterBody.classList.add("rotate180");
-      this.characterBody.style.left = this.startPositionX - step + "px";
+      this.characterBody.style.left = (PositionX - step) + "px";
     }
 
     if (this.moveRight == true) {
-      this.characterBody.classList.add("rotate90", "rotate180", "rotateLess90", "rotate45", "rotate135", "rotateLess45", "rotateLess135");
-      this.characterBody.style.left = this.startPositionX + step + "px";
+      clearClassRotate
+      this.characterBody.style.left = (PositionX + step) + "px";
     }
 
     if (this.moveDown == true) {
-      this.characterBody.classList.remove("rotate90");
-      this.characterBody.style.top = this.startPositionY + step + "px";
+      clearClassRotate
+      this.characterBody.classList.add("rotate90");
+      this.characterBody.style.top = (PositionY + step) + "px";
     }
 
     if (this.moveDown == true && this.moveLeft == true) {
+      clearClassRotate
       this.characterBody.classList.add("rotate135");
-      this.characterBody.style.top = this.startPositionY + step + "px";
-      this.characterBody.style.left = this.startPositionX - step + "px";
+      this.characterBody.style.top = (PositionY + step) + "px";
+      this.characterBody.style.left = (PositionX - step) + "px";
     }
 
     if (this.moveDown == true && this.moveRight == true) {
+      clearClassRotate
       this.characterBody.classList.add("rotate45");
-      this.characterBody.style.top = this.startPositionY + step + "px";
-      this.characterBody.style.left = this.startPositionX + step + "px";
+      this.characterBody.style.top = (PositionY + step) + "px";
+      this.characterBody.style.left = (PositionX + step) + "px";
     }
   }
 }
