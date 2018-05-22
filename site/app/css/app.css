@@ -576,7 +576,6 @@
 }
 
 .hitmanMove {
-  background-position: -54px, 0px;
   width: 54px;
   height: 43px;
   animation: hitmanMove 0.8s steps(2);
@@ -594,7 +593,46 @@
 }
 
 .robotMove {
-  background-position: -54px, -43px;
   width: 49px;
   height: 43px;
+  animation: robotMove 0.8s steps(2);
+}
+
+@keyframes robotMove {
+  0%{background-position: -54px, -43px;}
+  100% {background-position: -108px, -43px;}
+}
+
+.soldierIdle {
+  background-position: 0px, -86px;
+  width: 52px;
+  height: 43px;
+}
+
+.soldierMove {
+  width: 52px;
+  height: 43px;
+  animation: soldierMove 0.8s steps(2);
+}
+
+@keyframes soldierMove {
+  0%{background-position: -54px, -86px;}
+  100% {background-position: -108px, -86px;}
+}
+
+.zombieIdle {
+  background-position: 0px, -129px;
+  width: 49px;
+  height: 43px;
+}
+
+.zombieMove {
+  width: 49px;
+  height: 43px;
+  animation: zombieMove 0.8s steps(2);
+}
+
+@keyframes zombieMove {
+  0%{background-position: -54px, -129px;}
+  100% {background-position: -108px, -129px;}
 }
