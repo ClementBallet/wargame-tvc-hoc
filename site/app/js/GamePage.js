@@ -1,13 +1,6 @@
-//Config Controller
-let moveUp = false;
-let moveDown = false;
-let moveLeft = false;
-let moveRight = false;
-let pushAction = false;
-
-
 class controller {
-  constructor(left, up, right, down, action) {
+  constructor(player, left, up, right, down, action) {
+    this.player = player;
     this.left = left;
     this.up = up;
     this.right = right;
@@ -21,19 +14,19 @@ class controller {
   onKeyDown(event) {
     switch (event.keycode) {
       case this.left:
-        moveLeft = true;
+        this.player.moveLeft = true;
         break;
       case this.up:
-        moveUp = true;
+        this.player.moveUp = true;
         break;
       case this.right:
-        moveRight = true;
+        this.player.moveRight = true;
         break;
       case this.down:
-        moveDown = true;
+        this.player.moveDown = true;
         break;
       case this.action:
-        pushAction = true;
+        this.player.pushAction = true;
         break;
     }
   }
@@ -41,23 +34,20 @@ class controller {
   onKeyUp(event) {
     switch (event.keycode) {
       case this.left:
-        moveLeft = false;
+        this.player.moveLeft = false;
         break;
       case this.up:
-        moveUp = false;
+        this.player.moveUp = false;
         break;
       case this.right:
-        moveRight = false;
+        this.player.moveRight = false;
         break;
       case this.down:
-        moveDown = false;
+        this.player.moveDown = false;
         break;
       case this.action:
-        pushAction = false;
+        this.player.pushAction = false;
         break;
     }
   }
 }
-
-let controlP1 = new controller(81, 90, 68, 83, 32);
-let controlP2 = new controller(37, 38, 39, 40, 96);
