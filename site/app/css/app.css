@@ -1,0 +1,553 @@
+#app {
+  width: 1280px;
+  height: 800px;
+}
+
+.spriteSheet {
+  background-image: url('../../assets/allSprites_default1.png');
+  background-repeat: no-repeat;
+}
+
+.spriteSheet.t1{
+  width: 64px;
+  height: 64px;
+  background-position: 0px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t2{
+  width: 64px;
+  height: 64px;
+  background-position: -64px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t3{
+  width: 64px;
+  height: 64px;
+  background-position: -128px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t4{
+  width: 64px;
+  height: 64px;
+  background-position: -192px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t5{
+  width: 64px;
+  height: 64px;
+  background-position: -256px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t6{
+  width: 64px;
+  height: 64px;
+  background-position: -320px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t7{
+  width: 64px;
+  height: 64px;
+  background-position: -384px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t8{
+  width: 64px;
+  height: 64px;
+  background-position: -448px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t9{
+  width: 64px;
+  height: 64px;
+  background-position: -512px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t10{
+  width: 64px;
+  height: 64px;
+  background-position: -576px 0px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t11{
+  width: 64px;
+  height: 64px;
+  background-position: 0px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t12{
+  width: 64px;
+  height: 64px;
+  background-position: -64px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t13{
+  width: 64px;
+  height: 64px;
+  background-position: -128px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t14{
+  width: 64px;
+  height: 64px;
+  background-position: -192px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t15{
+  width: 64px;
+  height: 64px;
+  background-position: -256px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t16{
+  width: 64px;
+  height: 64px;
+  background-position: -320px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t17{
+  width: 64px;
+  height: 64px;
+  background-position: -384px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t18{
+  width: 64px;
+  height: 64px;
+  background-position: -448px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t19{
+  width: 64px;
+  height: 64px;
+  background-position: -512px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t20{
+  width: 64px;
+  height: 64px;
+  background-position: -576px -64px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t21{
+  width: 64px;
+  height: 64px;
+  background-position: 0px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t22{
+  width: 64px;
+  height: 64px;
+  background-position: -64px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t23{
+  width: 64px;
+  height: 64px;
+  background-position: -128px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t24{
+  width: 64px;
+  height: 64px;
+  background-position: -192px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t25{
+  width: 64px;
+  height: 64px;
+  background-position: -256px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t26{
+  width: 64px;
+  height: 64px;
+  background-position: -320px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t27{
+  width: 64px;
+  height: 64px;
+  background-position: -384px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t28{
+  width: 64px;
+  height: 64px;
+  background-position: -448px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t29{
+  width: 64px;
+  height: 64px;
+  background-position: -512px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t30{
+  width: 64px;
+  height: 64px;
+  background-position: -576px -128px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t31{
+  width: 64px;
+  height: 64px;
+  background-position: 0px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t32{
+  width: 64px;
+  height: 64px;
+  background-position: -64px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t33{
+  width: 64px;
+  height: 64px;
+  background-position: -128px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t34{
+  width: 64px;
+  height: 64px;
+  background-position: -192px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t35{
+  width: 64px;
+  height: 64px;
+  background-position: -256px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t36{
+  width: 64px;
+  height: 64px;
+  background-position: -320px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t37{
+  width: 64px;
+  height: 64px;
+  background-position: -384px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t38{
+  width: 64px;
+  height: 64px;
+  background-position: -448px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t39{
+  width: 64px;
+  height: 64px;
+  background-position: -512px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t40{
+  width: 64px;
+  height: 64px;
+  background-position: -576px -192px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t41{
+  width: 64px;
+  height: 64px;
+  background-position: 0px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t42{
+  width: 64px;
+  height: 64px;
+  background-position: -64px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t43{
+  width: 64px;
+  height: 64px;
+  background-position: -128px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t44{
+  width: 64px;
+  height: 64px;
+  background-position: -192px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t45{
+  width: 64px;
+  height: 64px;
+  background-position: -256px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t46{
+  width: 64px;
+  height: 64px;
+  background-position: -320px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t47{
+  width: 64px;
+  height: 64px;
+  background-position: -384px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t48{
+  width: 64px;
+  height: 64px;
+  background-position: -448px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t49{
+  width: 64px;
+  height: 64px;
+  background-position: -512px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t50{
+  width: 64px;
+  height: 64px;
+  background-position: -576px -256px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t51{
+  width: 64px;
+  height: 64px;
+  background-position: 0px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t52{
+  width: 64px;
+  height: 64px;
+  background-position: -64px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t53{
+  width: 64px;
+  height: 64px;
+  background-position: -128px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t54{
+  width: 64px;
+  height: 64px;
+  background-position: -192px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t55{
+  width: 64px;
+  height: 64px;
+  background-position: -256px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t56{
+  width: 64px;
+  height: 64px;
+  background-position: -320px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t57{
+  width: 64px;
+  height: 64px;
+  background-position: -384px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t58{
+  width: 64px;
+  height: 64px;
+  background-position: -448px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t59{
+  width: 64px;
+  height: 64px;
+  background-position: -512px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.spriteSheet.t60{
+  width: 64px;
+  height: 64px;
+  background-position: -576px -320px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+ #map {
+   border-collapse: collapse;
+ }
