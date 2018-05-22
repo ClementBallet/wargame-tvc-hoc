@@ -558,15 +558,15 @@
 }
 
 .rotate90 {
-  transform: rotate(90);
+  transform: rotate(90deg);
 }
 
 .rotate180 {
-  transform: rotate(180);
+  transform: rotate(180deg);
 }
 
 .rotateLess90 {
-  transform: rotate(-90);
+  transform: rotate(-90deg);
 }
 
 .hitmanIdle {
