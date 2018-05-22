@@ -557,6 +557,18 @@
   background-repeat: no-repeat;
 }
 
+.rotate90 {
+  transform: rotate(90);
+}
+
+.rotate180 {
+  transform: rotate(180);
+}
+
+.rotateLess90 {
+  transform: rotate(-90);
+}
+
 .hitmanIdle {
   background-position: 0px, 0px;
   width: 54px;
@@ -575,13 +587,13 @@
   100% {background-position: -108px, 0px;}
 }
 
-#robotIdle {
+.robotIdle {
   background-position: 0px, -43px;
   width: 49px;
   height: 43px;
 }
 
-#robotMove {
+.robotMove {
   background-position: -54px, -43px;
   width: 49px;
   height: 43px;
