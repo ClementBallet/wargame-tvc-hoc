@@ -551,3 +551,38 @@
   margin: 0;
   border: 0;
 }
+
+.characterSheet {
+  background-image: url('../../assets/charactersheet.png');
+  background-repeat: no-repeat;
+}
+
+.hitmanIdle {
+  background-position: 0px, 0px;
+  width: 54px;
+  height: 43px;
+}
+
+.hitmanMove {
+  background-position: -54px, 0px;
+  width: 54px;
+  height: 43px;
+  animation: hitmanMove 0.8s steps(2);
+}
+
+@keyframes hitmanMove {
+  0%{background-position: -54px, 0px;}
+  100% {background-position: -108px, 0px;}
+}
+
+#robotIdle {
+  background-position: 0px, -43px;
+  width: 49px;
+  height: 43px;
+}
+
+#robotMove {
+  background-position: -54px, -43px;
+  width: 49px;
+  height: 43px;
+}
