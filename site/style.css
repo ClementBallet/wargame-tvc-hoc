@@ -27,6 +27,10 @@ ul {
   margin:0 auto;
 }
 
+#game {
+  display: none;
+}
+
 /* Style div title */
 .title {
   width:100%;

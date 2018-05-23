@@ -25,10 +25,14 @@ class UIHomePage {
             let a = this.charactersList[i];
             a.addEventListener('click', this.onChooseCharacter.bind(this));
         }
+
+        // Event on Start button
+        this.el.querySelector('.start').addEventListener('click', this.onClickButton.bind(this));
     }
 
     onChangeInput(event) {
-      console.log(event.target.value);
+      let pseudo = event.target.value;
+      console.log(pseudo);
     }
 
     onChooseCharacter(event) {
@@ -36,6 +40,14 @@ class UIHomePage {
 
         let characterChosen = event.target.parentElement.dataset.character;
         this.app.onChooseCharacter(characterChosen);
+    }
+
+    onClickButton(event) {
+      event.preventDefault();
+
+
+
+
     }
 
     render() {
