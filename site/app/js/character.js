@@ -108,7 +108,7 @@ class character {
 
 // creation de personnages
 // class Character{
-//   constructor(name) {
+//   constructor() {
 //     this.name=name;
 //   }
 // }
