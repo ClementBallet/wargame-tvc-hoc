@@ -31,7 +31,7 @@ class UIHomePage {
         }
 
         // Event on Start button
-        this.startButton.addEventListener('click', this.onClickButton.bind(this));
+        this.startButton.addEventListener('click', this.onClickStartButton.bind(this));
     }
 
     clearInputsValue() {
@@ -50,10 +50,10 @@ class UIHomePage {
         this.app.onChooseCharacter(characterChosen);
     }
 
-    onClickButton(event) {
+    onClickStartButton(event) {
       event.preventDefault();
-      event.target.offsetParent.querySelector('#homepage').classList.add('displayHidden')
-      event.target.offsetParent.querySelector('#game').classList.remove('displayHidden')
+
+      this.app.gotoGame();
     };
 
     render() {

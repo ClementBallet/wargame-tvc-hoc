@@ -9,24 +9,15 @@ class App {
 
     init() {
         this.UIhomePage = new UIHomePage(this);
-        this.Map = new Map(this);
-
-        this.player1 = new character((this.characterGamer1 + 'Idle'), (this.characterGamer1 + 'Move'), 80, 80, "rotate90");
-        this.player2 = new character((this.characterGamer2 + 'Idle'), (this.characterGamer2 + 'Move'), 1150, 645, "rotateLess90");
-
-        this.controlP1 = new controller(this.player1, 81, 90, 68, 83, 32);
-        this.controlP2 = new controller(this.player2, 37, 38, 39, 40, 96);
+        this.GamePage = new GamePage(this);
 
         this.loop();
     }
 
     render() {
-        if (!this.gameStarted) {
-           this.UIhomePage.render();
-        }
-
-        this.player1.moveCharacter();
-        this.player2.moveCharacter();
+      if(this.gameStarted){
+        this.GamePage.render();
+      }
     }
 
     loop() {
@@ -62,5 +53,14 @@ class App {
 
         console.log('Player 1 is :', this.characterGamer1);
         console.log('Player 2 is :', this.characterGamer2);
+    }
+
+    gotoGame(){
+      document.querySelector('#homepage').classList.add('displayHidden')
+      document.querySelector('#game').classList.remove('displayHidden')
+
+      this.gameStarted = true;
+
+      this.GamePage.init();
     }
 }

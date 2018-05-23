@@ -28,7 +28,7 @@ ul {
 }
 
 .displayHidden {
-  display: none;
+  display: none !important;
 }
 
 #game {

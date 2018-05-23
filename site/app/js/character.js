@@ -7,6 +7,8 @@ class character {
       this.startRotateClassName = startRotateClassName;
       this.characterBody = null;
 
+      this.rotateClassName = this.startRotateClassName;
+
       this.moveUp = false;
       this.moveLeft = false;
       this.moveDown = false;
@@ -53,54 +55,66 @@ class character {
 
     if (this.moveUp == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotateLess90");
+      this.rotateClassName = "rotateLess90";
+      //this.characterBody.classList.add("rotateLess90");
       this.characterBody.style.top = (PositionY - step) + "px";
     }
 
     if (this.moveUp == true && this.moveLeft == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotateLess135");
+
+      this.rotateClassName = "rotateLess135";
+      //this.characterBody.classList.add("rotateLess135");
       this.characterBody.style.top = (PositionY - step) + "px";
       this.characterBody.style.left = (PositionX - step) + "px";
     }
 
     if (this.moveUp == true && this.moveRight == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotateLess45");
+      this.rotateClassName = "rotateLess45";
+      // this.characterBody.classList.add("rotateLess45");
       this.characterBody.style.top = (PositionY - step) + "px";
       this.characterBody.style.left = (PositionX + step) + "px";
     }
 
     if (this.moveLeft == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotate180");
+      this.rotateClassName = "rotate180";
+      // this.characterBody.classList.add("rotate180");
       this.characterBody.style.left = (PositionX - step) + "px";
     }
 
     if (this.moveRight == true) {
       clearClassRotate
+      this.rotateClassName = "rotate0";
       this.characterBody.style.left = (PositionX + step) + "px";
     }
 
     if (this.moveDown == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotate90");
+      this.rotateClassName = "rotate90";
+      // this.characterBody.classList.add("rotate90");
       this.characterBody.style.top = (PositionY + step) + "px";
     }
 
     if (this.moveDown == true && this.moveLeft == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotate135");
+      this.rotateClassName = "rotate135";
+      // this.characterBody.classList.add("rotate135");
       this.characterBody.style.top = (PositionY + step) + "px";
       this.characterBody.style.left = (PositionX - step) + "px";
     }
 
     if (this.moveDown == true && this.moveRight == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotate45");
+      this.rotateClassName = "rotate45";
+      // this.characterBody.classList.add("rotate45");
       this.characterBody.style.top = (PositionY + step) + "px";
       this.characterBody.style.left = (PositionX + step) + "px";
     }
+
+
+    this.characterBody.classList.add(this.rotateClassName);
   }
 }
 
