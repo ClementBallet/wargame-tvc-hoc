@@ -12,11 +12,10 @@ class UIHomePage {
         this.inputPlayerTwo = this.el.querySelector('#pseudo2');
         this.characterSelector = this.el.querySelector('#character-selector');
         this.charactersList = this.characterSelector.querySelectorAll('.character');
-      
+
     }
 
     initEvents() {
-      console.log('lala')
         // Events on inputs
         this.inputPlayerOne.addEventListener('keypress', this.onChangeInput.bind(this));
         this.inputPlayerTwo.addEventListener('keypress', this.onChangeInput.bind(this));
@@ -35,7 +34,7 @@ class UIHomePage {
     onChooseCharacter(event) {
         event.preventDefault();
 
-        let characterChosen = event.target.dataset.character;
+        let characterChosen = event.target.parentElement.dataset.character;
         this.app.onChooseCharacter(characterChosen);
     }
 
