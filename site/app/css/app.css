@@ -569,8 +569,32 @@
   transform: rotate(-90deg);
 }
 
+.rotate45 {
+  transform: rotate(45deg);
+}
+
+.rotateLess45 {
+  transform: rotate(-45deg);
+}
+
+.rotate135 {
+  transform: rotate(135deg);
+}
+
+.rotateLess135 {
+  transform: rotate(-135deg);
+}
+
+#playZone{
+  position: relative;
+}
+
+.player_avatar{
+  position: absolute;
+}
+
 .hitmanIdle {
-  background-position: 0px, 0px;
+  background-position: 0px 0px;
   width: 54px;
   height: 43px;
 }
@@ -582,12 +606,12 @@
 }
 
 @keyframes hitmanMove {
-  0%{background-position: -54px, 0px;}
-  100% {background-position: -108px, 0px;}
+  0%{background-position: -54px 0px;}
+  100% {background-position: -108px 0px;}
 }
 
 .robotIdle {
-  background-position: 0px, -43px;
+  background-position: 0px -43px;
   width: 49px;
   height: 43px;
 }
@@ -599,12 +623,12 @@
 }
 
 @keyframes robotMove {
-  0%{background-position: -54px, -43px;}
-  100% {background-position: -108px, -43px;}
+  0%{background-position: -54px -43px;}
+  100% {background-position: -108px -43px;}
 }
 
 .soldierIdle {
-  background-position: 0px, -86px;
+  background-position: 0px -86px;
   width: 52px;
   height: 43px;
 }
@@ -616,12 +640,12 @@
 }
 
 @keyframes soldierMove {
-  0%{background-position: -54px, -86px;}
-  100% {background-position: -108px, -86px;}
+  0%{background-position: -54px -86px;}
+  100% {background-position: -108px -86px;}
 }
 
 .zombieIdle {
-  background-position: 0px, -129px;
+  background-position: 0px -129px;
   width: 49px;
   height: 43px;
 }
@@ -633,6 +657,6 @@
 }
 
 @keyframes zombieMove {
-  0%{background-position: -54px, -129px;}
-  100% {background-position: -108px, -129px;}
+  0%{background-position: -54px -129px;}
+  100% {background-position: -108px -129px;}
 }
