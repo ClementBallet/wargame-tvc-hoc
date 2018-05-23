@@ -36,7 +36,17 @@ class character {
     const step = 4;
     let PositionX = this.characterBody.offsetLeft;
     let PositionY = this.characterBody.offsetTop;
+    let characterWidth = this.characterBody.getBoundingClientRect().width;
+    let characterHeight = this.characterBody.getBoundingClientRect().height;
+    let PositionRight = PositionX + characterWidth;
+    let PositionBottom = PositionY + characterHeight;
+
     let clearClassRotate = this.characterBody.classList.remove("rotate90", "rotate180", "rotateLess90", "rotate45", "rotate135", "rotateLess45", "rotateLess135");
+
+    let playzone = document.querySelector('#playZone');
+    let playzoneWidth = playzone.clientWidth;
+    let playzoneHeight = playzone.clientHeight;
+    let playzoneBorder = 15;
 
 ///////////////////////////////// ANIMATION /////////////////////////////////
 
@@ -60,22 +70,7 @@ class character {
       this.characterBody.style.top = (PositionY - step) + "px";
     }
 
-    if (this.moveUp == true && this.moveLeft == true) {
-      clearClassRotate
 
-      this.rotateClassName = "rotateLess135";
-      //this.characterBody.classList.add("rotateLess135");
-      this.characterBody.style.top = (PositionY - step) + "px";
-      this.characterBody.style.left = (PositionX - step) + "px";
-    }
-
-    if (this.moveUp == true && this.moveRight == true) {
-      clearClassRotate
-      this.rotateClassName = "rotateLess45";
-      // this.characterBody.classList.add("rotateLess45");
-      this.characterBody.style.top = (PositionY - step) + "px";
-      this.characterBody.style.left = (PositionX + step) + "px";
-    }
 
     if (this.moveLeft == true) {
       clearClassRotate
@@ -113,41 +108,43 @@ class character {
       this.characterBody.style.left = (PositionX + step) + "px";
     }
 
+    if (this.moveUp == true && this.moveLeft == true) {
+      clearClassRotate
+
+      this.rotateClassName = "rotateLess135";
+      //this.characterBody.classList.add("rotateLess135");
+      this.characterBody.style.top = (PositionY - step) + "px";
+      this.characterBody.style.left = (PositionX - step) + "px";
+    }
+
+    if (this.moveUp == true && this.moveRight == true) {
+      clearClassRotate
+      this.rotateClassName = "rotateLess45";
+      // this.characterBody.classList.add("rotateLess45");
+      this.characterBody.style.top = (PositionY - step) + "px";
+      this.characterBody.style.left = (PositionX + step) + "px";
+    }
 
     this.characterBody.classList.add(this.rotateClassName);
+
+
+///////////////////////////////// COLLISIONS /////////////////////////////////
+
+    // Gestion de la collision avec le bord droit de la map
+    if (PositionRight > playzoneWidth - playzoneBorder) {
+       this.characterBody.style.left = (playzoneWidth - characterWidth - playzoneBorder) + 'px';
+    }
+    // Gestion de la collision avec le bord gauche de la map
+    if (PositionX < 0 + playzoneBorder) {
+      this.characterBody.style.left = (0 + playzoneBorder) + 'px';
+    }
+    // Gestion de la collision avec le bord haut de la map
+    if (PositionY < 0 + playzoneBorder) {
+      this.characterBody.style.top = (0 + playzoneBorder) + 'px';
+    }
+    // Gestion de la collision avec le bord bas de la map
+    if (PositionBottom > playzoneHeight - playzoneBorder) {
+      this.characterBody.style.top = (playzoneHeight - characterHeight - playzoneBorder) + 'px';
+    }
   }
 }
-
-
-
-// creation de personnages
-// class Character{
-//   constructor(name) {
-//     this.name=name;
-//   }
-// }
-// let hitman= new Character('hitmain');
-// let robot= new Character('robot');
-// let soldier= new Character('soldier');
-// let zombie= new Character('zombie');
-//
-// let pTableau = [hitman, robot, soldier,zombie];
-//
-//
-// for (let i = 0; i < pTableau.length; i++) {
-//
-//   console.log(pTableau[i])
-//
-// };
-
-// function characterPlayerSelected (contour)
-// {
-// 	if(contour == 1){
-// 		$('character-playerOne-isselected').css('border','5px outset lawngreen');
-// 		document.querySelector('character-playerOne-isselected').value = 1;
-// 	}
-//   if(contour == 2){
-// 		$('character-playerTwo-isselected').css('border','5px outset #f00c93');
-// 		document.getElementById('#').value = 2;
-// 	}
-// }
