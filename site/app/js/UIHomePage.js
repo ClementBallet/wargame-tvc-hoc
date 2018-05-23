@@ -4,6 +4,7 @@ class UIHomePage {
 
         this.initDOMElements();
         this.initEvents();
+        this.clearInputsValue();
     }
 
     initDOMElements() {
@@ -12,8 +13,11 @@ class UIHomePage {
         this.inputPlayerTwo = this.el.querySelector('#pseudo2');
         this.characterSelector = this.el.querySelector('#character-selector');
         this.charactersList = this.characterSelector.querySelectorAll('.character');
+        this.startButton = this.el.querySelector('.start')
 
     }
+
+
 
     initEvents() {
         // Events on inputs
@@ -27,12 +31,16 @@ class UIHomePage {
         }
 
         // Event on Start button
-        this.el.querySelector('.start').addEventListener('click', this.onClickButton.bind(this));
+        this.startButton.addEventListener('click', this.onClickButton.bind(this));
+    }
+
+    clearInputsValue() {
+      this.inputPlayerOne.value = '';
+      this.inputPlayerTwo.value = '';
     }
 
     onChangeInput(event) {
       let pseudo = event.target.value;
-      console.log(pseudo);
     }
 
     onChooseCharacter(event) {
@@ -44,11 +52,9 @@ class UIHomePage {
 
     onClickButton(event) {
       event.preventDefault();
-
-
-
-
-    }
+      event.target.offsetParent.querySelector('#homepage').classList.add('displayHidden')
+      event.target.offsetParent.querySelector('#game').classList.remove('displayHidden')
+    };
 
     render() {
 

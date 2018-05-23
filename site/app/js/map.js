@@ -19,8 +19,6 @@ class Map {
     this.fillMap();
   }
 
-
-
   createMap() {
     let i = 0;
     let j = 0;
@@ -39,7 +37,6 @@ class Map {
       }
     }
   }
-
 
   fillMap() {
     let t = 0;

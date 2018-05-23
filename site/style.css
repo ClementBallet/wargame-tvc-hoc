@@ -27,8 +27,11 @@ ul {
   margin:0 auto;
 }
 
-#game {
+.displayHidden {
   display: none;
+}
+
+#game {
 }
 
 /* Style div title */
