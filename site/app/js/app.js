@@ -63,4 +63,5 @@ class App {
         console.log('Player 1 is :', this.characterGamer1);
         console.log('Player 2 is :', this.characterGamer2);
     }
+
 }
