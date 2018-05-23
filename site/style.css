@@ -7,8 +7,16 @@
   padding: 0;
 }
 
+body {
+  background-color: indianred;
+}
+
 ul {
   list-style-type: none;
+}
+
+#app {
+  margin: auto;
 }
 
 /* Style div screendisplay */
@@ -16,15 +24,14 @@ ul {
   display: flex;
   flex-direction: column;
   width: 1280px;
-  height: 800px;
   margin:0 auto;
 }
 
 /* Style div title */
 .title {
   width:100%;
-  height:39%;
-  background: url(god.jpg);
+  height:260px;
+  background: url("img/megawar-wallpaper.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -35,38 +42,48 @@ ul {
 
 /* Style div names */
 .names {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: center;
   width:100%;
-  height:15%;
-  background-color: silver;
+  background-color: cadetblue;
+}
+
+.names h1 {
+  text-align: center;
+  padding: 32px;
+}
+
+.forms {
+  display: flex;
+  padding: 25px;
 }
 
 .formSize {
   width: 25%;
-  height: 70%;
+}
+
+.forms input {
+  margin-top: 10px;
+}
+
+#myForm1, #myForm2 {
+  padding: 15px;
+  text-align: center;
+}
+
+#myForm1 {
+  background-color: lawngreen;
+}
+
+#myForm2 {
+  background-color:	#f00c93;
 }
 
 #firstPerson p {
   text-align: center;
 }
-#firstPerson{
 
-  background-color: #00ff78 ;
-
-}
-
-#secondPerson {
-
-  background-color: #00ff78;
-}
-
-#myForm1{
+#firstPerson, #secondPerson{
+  background-color: peru ;
   margin: auto;
-
 }
 
 /* Style div persons */
@@ -91,29 +108,21 @@ ul {
   height: 200px;
 }
 
-#hitman {
-  background-color : red;
-  border: 5px outset red;
+#hitman, #robot, #soldier, #zombie {
+  background-color: slategrey;
+  border: 5px outset slategrey;
 }
 
-#robot {
-  background-color : blue;
-  border: 5px outset blue;
+#hitman:hover, #robot:hover, #soldier:hover, #zombie:hover  {
+  opacity: 0.8;
 }
 
-#soldier {
-  background-color : purple;
-  border: 5px outset purple;
+.character-playerOne-isselected {
+  border: 5px outset lawngreen;
 }
 
-#zombie {
-  background-color : gold;
-  border: 5px outset gold;
-}
-
-#hitman:hover {
-  height: 210px;
-  border: none;
+.character-playerTwo-isselected {
+  border: 5px outset #f00c93;
 }
 
 #character-selector li a {
@@ -123,9 +132,10 @@ ul {
 /* Style div start */
 .start {
   width:100%;
-  height:18%;
-  background-color: ;
+  background-color: darkseagreen;
   display: flex;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .start a {
