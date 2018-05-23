@@ -1,5 +1,5 @@
 class character {
-  constructor(classNameIdle, classNameMove, startPositionX, startPositionY, startRotateClassName) {
+  constructor (classNameIdle, classNameMove, startPositionX, startPositionY, startRotateClassName) {
       this.className = classNameIdle;
       this.classNameMove = classNameMove;
       this.startPositionX = startPositionX;
@@ -16,11 +16,11 @@ class character {
   }
 
   createCharacter(){
-    let playzone = document.querySelector('#playZone')
-    this.characterBody = document.createElement('div')
-
-    playzone.appendChild(this.characterBody)
-    this.characterBody.classList.add(this.className, this.startRotateClassName, 'player_avatar', 'characterSheet')
+    let playzone = document.querySelector('#playZone');
+    this.characterBody = document.createElement('div');
+    console.log(playzone);
+    playzone.appendChild(this.characterBody);
+    this.characterBody.classList.add(this.className, this.startRotateClassName, 'player_avatar', 'characterSheet');
 
     this.characterBody.style.left = this.startPositionX + 'px';
     this.characterBody.style.top = this.startPositionY + 'px';
@@ -36,17 +36,23 @@ class character {
     let PositionY = this.characterBody.offsetTop;
     let clearClassRotate = this.characterBody.classList.remove("rotate90", "rotate180", "rotateLess90", "rotate45", "rotate135", "rotateLess45", "rotateLess135");
 
+    let characterWidth = this.characterBody.getBoundingClientRect().width;
+    let playzone = document.querySelector('#playZone');
+    let playzoneWidth = playzone.clientWidth - 30;
+    let playzoneHeight = playzone.clientHeight - 30;
+    
+
 ///////////////////////////////// ANIMATION /////////////////////////////////
 
 
     if (this.moveLeft == true || this.moveUp == true || this.moveRight == true || this.moveDown == true) {
-      this.characterBody.classList.remove(this.className)
-      this.characterBody.classList.add(this.classNameMove)
+      this.characterBody.classList.remove(this.className);
+      this.characterBody.classList.add(this.classNameMove);
     }
 
     if (this.moveLeft == false || this.moveUp == false || this.moveRight == false || this.moveDown == false) {
-      this.characterBody.classList.remove(this.classNameMove)
-      this.characterBody.classList.add(this.className)
+      this.characterBody.classList.remove(this.classNameMove);
+      this.characterBody.classList.add(this.className);
     }
 
 //////////////////////////// MOVEMENT & ROTATION ////////////////////////////
@@ -100,6 +106,11 @@ class character {
       this.characterBody.classList.add("rotate45");
       this.characterBody.style.top = (PositionY + step) + "px";
       this.characterBody.style.left = (PositionX + step) + "px";
+    }
+
+    if (PositionX + characterWidth === playzoneWidth) {
+      console.log("arrêt !");
+      
     }
   }
 }

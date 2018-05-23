@@ -16,7 +16,6 @@ class UIHomePage {
     }
 
     initEvents() {
-      console.log('lala')
         // Events on inputs
         this.inputPlayerOne.addEventListener('keypress', this.onChangeInput.bind(this));
         this.inputPlayerTwo.addEventListener('keypress', this.onChangeInput.bind(this));
