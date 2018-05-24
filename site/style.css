@@ -56,12 +56,12 @@ ul {
 
 .names h1 {
   text-align: center;
-  padding: 20px;
+  padding: 32px;
 }
 
 .forms {
   display: flex;
-  padding: 18px;
+  padding: 25px;
 }
 
 .formSize {
@@ -75,7 +75,6 @@ ul {
 #myForm1, #myForm2 {
   padding: 15px;
   text-align: center;
-  height: 70px;
 }
 
 #myForm1 {
@@ -84,10 +83,6 @@ ul {
 
 #myForm2 {
   background-color:	#f00c93;
-}
-
-.text-error {
-  font-size: xx-small;
 }
 
 #firstPerson p {
@@ -140,8 +135,6 @@ ul {
 
 #character-selector li a {
   text-decoration: none;
-  width: 100%;
-  height: 100%;
 }
 
 /* Style div start */

@@ -619,7 +619,7 @@
 .robotMove {
   width: 49px;
   height: 43px;
-  animation: robotMove 0.8s steps(2);
+  animation: robotMove 2s steps(2);
 }
 
 @keyframes robotMove {
@@ -659,4 +659,19 @@
 @keyframes zombieMove {
   0%{background-position: -54px -129px;}
   100% {background-position: -108px -129px;}
+}
+
+.bullet{
+  position:absolute;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 6px;
+}
+
+.bullet1 {
+  background-image: url('../../assets/bullet1.png');
+}
+
+.bullet2 {
+  background-image: url('../../assets/bullet4.png');
 }

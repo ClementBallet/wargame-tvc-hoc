@@ -13,19 +13,17 @@ class GamePage {
   init() {
     this.Map = new Map(this);
 
-    this.player1 = new character((this.app.characterGamer1 + 'Idle'), (this.app.characterGamer1 + 'Move'), 80, 80, "rotate90");
-    this.player2 = new character((this.app.characterGamer2 + 'Idle'), (this.app.characterGamer2 + 'Move'), 1150, 645, "rotateLess90");
+    this.player1 = new character((this.app.characterGamer1 + 'Idle'), (this.app.characterGamer1 + 'Move'), 80, 80, "rotate90", "bullet1");
+    this.player2 = new character((this.app.characterGamer2 + 'Idle'), (this.app.characterGamer2 + 'Move'), 1150, 645, "rotateLess90", "bullet2");
 
     this.controlP1 = new controller(this.player1, 81, 90, 68, 83, 32);
-    this.controlP2 = new controller(this.player2, 37, 38, 39, 40, 96);
-
+    this.controlP2 = new controller(this.player2, 37, 38, 39, 40, 13);
   }
 
   render() {
-    this.player1.moveCharacter();
-    this.player2.moveCharacter();
+    this.player1.render();
+    this.player2.render();
   }
-
 
 }
 
@@ -59,7 +57,8 @@ class controller {
         this.player.moveDown = true;
         break;
       case this.action:
-        this.player.pushAction = true;
+        // this.player.pushAction = true;
+        this.player.shoot();
         break;
     }
   }
@@ -79,7 +78,7 @@ class controller {
         this.player.moveDown = false;
         break;
       case this.action:
-        this.player.pushAction = false;
+        //this.player.pushAction = false;
         break;
     }
   }
