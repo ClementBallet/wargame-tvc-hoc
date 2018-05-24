@@ -33,9 +33,23 @@ class UIHomePage {
 
     onChooseCharacter(event) {
         event.preventDefault();
-
-        let characterChosen = event.target.dataset.character;
+        
+        let characterChosen = event.target.parentElement.dataset.character;
         this.app.onChooseCharacter(characterChosen);
+        console.log(characterChosen);
+    }
+
+    checkButtonStart() {
+        if (this.app.characterGamer1) {
+            
+        } else {
+
+        }
+        if (this.app.characterGamer2) {
+            
+        } else {
+
+        }
     }
 
     render() {

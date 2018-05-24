@@ -41,6 +41,7 @@ class character {
     let playzoneWidth = playzone.clientWidth - 30;
     let playzoneHeight = playzone.clientHeight - 30;
     
+    
 
 ///////////////////////////////// ANIMATION /////////////////////////////////
 
@@ -107,10 +108,21 @@ class character {
       this.characterBody.style.top = (PositionY + step) + "px";
       this.characterBody.style.left = (PositionX + step) + "px";
     }
-
+    // Gestion de la collision avec le bord droit de la map
     if (PositionX + characterWidth === playzoneWidth) {
+      this.PositionX = playzoneWidth;
+    }
+    // Gestion de la collision avec le bord gauche de la map
+    if (PositionX === 0) {
       console.log("arrêt !");
-      
+    }
+    // Gestion de la collision avec le bord haut de la map
+    if (PositionY === 0) {
+      console.log("arrêt !");
+    }
+    // Gestion de la collision avec le bord bas de la map
+    if (PositionY + characterWidth === playzoneHeight) {
+      console.log("arrêt !");
     }
   }
 }
