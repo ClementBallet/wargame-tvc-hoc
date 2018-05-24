@@ -1,5 +1,5 @@
 class character {
-  constructor(classNameIdle, classNameMove, startPositionX, startPositionY, startRotateClassName) {
+  constructor (classNameIdle, classNameMove, startPositionX, startPositionY, startRotateClassName) {
       this.className = classNameIdle;
       this.classNameMove = classNameMove;
       this.startPositionX = startPositionX;
@@ -18,11 +18,11 @@ class character {
   }
 
   createCharacter(){
-    let playzone = document.querySelector('#playZone')
-    this.characterBody = document.createElement('div')
-
-    playzone.appendChild(this.characterBody)
-    this.characterBody.classList.add(this.className, this.startRotateClassName, 'player_avatar', 'characterSheet')
+    let playzone = document.querySelector('#playZone');
+    this.characterBody = document.createElement('div');
+    console.log(playzone);
+    playzone.appendChild(this.characterBody);
+    this.characterBody.classList.add(this.className, this.startRotateClassName, 'player_avatar', 'characterSheet');
 
     this.characterBody.style.left = this.startPositionX + 'px';
     this.characterBody.style.top = this.startPositionY + 'px';
@@ -43,22 +43,24 @@ class character {
 
     let clearClassRotate = this.characterBody.classList.remove("rotate90", "rotate180", "rotateLess90", "rotate45", "rotate135", "rotateLess45", "rotateLess135");
 
+
     let playzone = document.querySelector('#playZone');
     let playzoneWidth = playzone.clientWidth;
     let playzoneHeight = playzone.clientHeight;
     let playzoneBorder = 15;
 
+
 ///////////////////////////////// ANIMATION /////////////////////////////////
 
 
     if (this.moveLeft == true || this.moveUp == true || this.moveRight == true || this.moveDown == true) {
-      this.characterBody.classList.remove(this.className)
-      this.characterBody.classList.add(this.classNameMove)
+      this.characterBody.classList.remove(this.className);
+      this.characterBody.classList.add(this.classNameMove);
     }
 
     if (this.moveLeft == false || this.moveUp == false || this.moveRight == false || this.moveDown == false) {
-      this.characterBody.classList.remove(this.classNameMove)
-      this.characterBody.classList.add(this.className)
+      this.characterBody.classList.remove(this.classNameMove);
+      this.characterBody.classList.add(this.className);
     }
 
 //////////////////////////// MOVEMENT & ROTATION ////////////////////////////
@@ -108,6 +110,7 @@ class character {
       this.characterBody.style.left = (PositionX + step) + "px";
     }
 
+
     if (this.moveUp == true && this.moveLeft == true) {
       clearClassRotate
 
@@ -145,6 +148,21 @@ class character {
     // Gestion de la collision avec le bord bas de la map
     if (PositionBottom > playzoneHeight - playzoneBorder) {
       this.characterBody.style.top = (playzoneHeight - characterHeight - playzoneBorder) + 'px';
+
     }
   }
 }
+//
+// };
+
+// function characterPlayerSelected (contour)
+// {
+// 	if(contour == 1){
+// 		$('character-playerOne-isselected').css('border','5px outset lawngreen');
+// 		document.querySelector('character-playerOne-isselected').value = 1;
+// 	}
+//   if(contour == 2){
+// 		$('character-playerTwo-isselected').css('border','5px outset #f00c93');
+// 		document.getElementById('#').value = 2;
+// 	}
+// }

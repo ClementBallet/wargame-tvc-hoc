@@ -14,7 +14,6 @@ class UIHomePage {
         this.characterSelector = this.el.querySelector('#character-selector');
         this.charactersList = this.characterSelector.querySelectorAll('.character');
         this.startButton = this.el.querySelector('.start')
-
     }
 
 
@@ -43,11 +42,29 @@ class UIHomePage {
       let pseudo = event.target.value;
     }
 
+    onChangeInput(event) {
+      console.log(event.target.value);
+    }
+
     onChooseCharacter(event) {
         event.preventDefault();
 
         let characterChosen = event.target.parentElement.dataset.character;
         this.app.onChooseCharacter(characterChosen);
+        console.log(characterChosen);
+    }
+
+    checkButtonStart() {
+        if (this.app.characterGamer1) {
+            
+        } else {
+
+        }
+        if (this.app.characterGamer2) {
+            
+        } else {
+
+        }
     }
 
     onClickStartButton(event) {

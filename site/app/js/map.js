@@ -28,6 +28,7 @@ class Map {
     for (j = 0; j < 12; j++){
       tr = document.createElement("tr")
       document.querySelector('#map').appendChild(tr)
+
       for (i = 0; i < 20; i++) {
         td = document.createElement("td")
         td.style.display = 'inline-block'
