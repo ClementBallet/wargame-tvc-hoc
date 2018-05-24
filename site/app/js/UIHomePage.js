@@ -26,6 +26,7 @@ class UIHomePage {
             let a = this.charactersList[i];
             a.addEventListener('click', this.onChooseCharacter.bind(this));
         }
+
     }
 // check if input required
     onChangeInput(event) {
@@ -47,19 +48,19 @@ class UIHomePage {
         // Check if required
         if(inputValue.length === 0){
             error.hasError = true;
-            error.text += '<small class="text-danger">Ce champ est requis</small><br>';
+            error.text += '<small class="text-error">Ce champ est requis</small><br>';
         }
 
-            // Check string length min
-            if (inputValue.length > 0 && inputValue.length < 2) {
-                error.hasError = true;
-                error.text += '<small class="text-danger">Ce champ est trop court</small>';
-            }
-            // Check string length max
-            if (inputValue.length > 8) {
-                error.hasError = true;
-                error.text += '<small class="text-danger">Ce champ est trop long</small>';
-            }
+        // Check string length min
+        if ( inputValue.length>0 && inputValue.length < 3) {
+            error.hasError = true;
+            error.text += '<small class="text-error">Ce champ est trop court</small>';
+        }
+        // Check string length max
+        if (inputValue.length > 20) {
+            error.hasError = true;
+            error.text += '<small class="text-error">Ce champ est trop long</small>';
+        }
 
         error.className = (error.hasError)? 'is-invalid' : 'is-valid';
         // Set new values
@@ -70,9 +71,12 @@ class UIHomePage {
     onChooseCharacter(event) {
         event.preventDefault();
 
-        let characterChosen = event.target.dataset.character;
+        let characterChosen = event.target.parentElement.dataset.character;
         this.app.onChooseCharacter(characterChosen);
+
+            
     }
+
 
     render() {
 
