@@ -172,5 +172,11 @@ class character {
       this.bullets.push(b);
   }
 
+  // isgameFinished() {
+  //   if (this.life == 0) {
+  //     app.gotoGameOver()
+  //   }
+  // }
+
 
 }
