@@ -28,6 +28,13 @@ ul {
   margin:0 auto;
 }
 
+.displayHidden {
+  display: none !important;
+}
+
+#game {
+}
+
 /* Style div title */
 .title {
   width:100%;

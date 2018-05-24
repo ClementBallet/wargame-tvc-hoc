@@ -7,6 +7,8 @@ class character {
       this.startRotateClassName = startRotateClassName;
       this.characterBody = null;
 
+      this.rotateClassName = this.startRotateClassName;
+
       this.moveUp = false;
       this.moveLeft = false;
       this.moveDown = false;
@@ -34,14 +36,19 @@ class character {
     const step = 4;
     let PositionX = this.characterBody.offsetLeft;
     let PositionY = this.characterBody.offsetTop;
+    let characterWidth = this.characterBody.getBoundingClientRect().width;
+    let characterHeight = this.characterBody.getBoundingClientRect().height;
+    let PositionRight = PositionX + characterWidth;
+    let PositionBottom = PositionY + characterHeight;
+
     let clearClassRotate = this.characterBody.classList.remove("rotate90", "rotate180", "rotateLess90", "rotate45", "rotate135", "rotateLess45", "rotateLess135");
 
-    let characterWidth = this.characterBody.getBoundingClientRect().width;
+
     let playzone = document.querySelector('#playZone');
-    let playzoneWidth = playzone.clientWidth - 30;
-    let playzoneHeight = playzone.clientHeight - 30;
-    
-    
+    let playzoneWidth = playzone.clientWidth;
+    let playzoneHeight = playzone.clientHeight;
+    let playzoneBorder = 15;
+
 
 ///////////////////////////////// ANIMATION /////////////////////////////////
 
@@ -60,92 +67,91 @@ class character {
 
     if (this.moveUp == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotateLess90");
+      this.rotateClassName = "rotateLess90";
+      //this.characterBody.classList.add("rotateLess90");
       this.characterBody.style.top = (PositionY - step) + "px";
     }
 
-    if (this.moveUp == true && this.moveLeft == true) {
-      clearClassRotate
-      this.characterBody.classList.add("rotateLess135");
-      this.characterBody.style.top = (PositionY - step) + "px";
-      this.characterBody.style.left = (PositionX - step) + "px";
-    }
 
-    if (this.moveUp == true && this.moveRight == true) {
-      clearClassRotate
-      this.characterBody.classList.add("rotateLess45");
-      this.characterBody.style.top = (PositionY - step) + "px";
-      this.characterBody.style.left = (PositionX + step) + "px";
-    }
 
     if (this.moveLeft == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotate180");
+      this.rotateClassName = "rotate180";
+      // this.characterBody.classList.add("rotate180");
       this.characterBody.style.left = (PositionX - step) + "px";
     }
 
     if (this.moveRight == true) {
       clearClassRotate
+      this.rotateClassName = "rotate0";
       this.characterBody.style.left = (PositionX + step) + "px";
     }
 
     if (this.moveDown == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotate90");
+      this.rotateClassName = "rotate90";
+      // this.characterBody.classList.add("rotate90");
       this.characterBody.style.top = (PositionY + step) + "px";
     }
 
     if (this.moveDown == true && this.moveLeft == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotate135");
+      this.rotateClassName = "rotate135";
+      // this.characterBody.classList.add("rotate135");
       this.characterBody.style.top = (PositionY + step) + "px";
       this.characterBody.style.left = (PositionX - step) + "px";
     }
 
     if (this.moveDown == true && this.moveRight == true) {
       clearClassRotate
-      this.characterBody.classList.add("rotate45");
+      this.rotateClassName = "rotate45";
+      // this.characterBody.classList.add("rotate45");
       this.characterBody.style.top = (PositionY + step) + "px";
       this.characterBody.style.left = (PositionX + step) + "px";
     }
+
+
+    if (this.moveUp == true && this.moveLeft == true) {
+      clearClassRotate
+
+      this.rotateClassName = "rotateLess135";
+      //this.characterBody.classList.add("rotateLess135");
+      this.characterBody.style.top = (PositionY - step) + "px";
+      this.characterBody.style.left = (PositionX - step) + "px";
+    }
+
+    if (this.moveUp == true && this.moveRight == true) {
+      clearClassRotate
+      this.rotateClassName = "rotateLess45";
+      // this.characterBody.classList.add("rotateLess45");
+      this.characterBody.style.top = (PositionY - step) + "px";
+      this.characterBody.style.left = (PositionX + step) + "px";
+    }
+
+    this.characterBody.classList.add(this.rotateClassName);
+
+
+///////////////////////////////// COLLISIONS /////////////////////////////////
+
     // Gestion de la collision avec le bord droit de la map
-    if (PositionX + characterWidth === playzoneWidth) {
-      this.PositionX = playzoneWidth;
+    if (PositionRight > playzoneWidth - playzoneBorder) {
+       this.characterBody.style.left = (playzoneWidth - characterWidth - playzoneBorder) + 'px';
     }
     // Gestion de la collision avec le bord gauche de la map
-    if (PositionX === 0) {
-      console.log("arrêt !");
+    if (PositionX < 0 + playzoneBorder) {
+      this.characterBody.style.left = (0 + playzoneBorder) + 'px';
     }
     // Gestion de la collision avec le bord haut de la map
-    if (PositionY === 0) {
-      console.log("arrêt !");
+    if (PositionY < 0 + playzoneBorder) {
+      this.characterBody.style.top = (0 + playzoneBorder) + 'px';
     }
     // Gestion de la collision avec le bord bas de la map
-    if (PositionY + characterWidth === playzoneHeight) {
-      console.log("arrêt !");
+    if (PositionBottom > playzoneHeight - playzoneBorder) {
+      this.characterBody.style.top = (playzoneHeight - characterHeight - playzoneBorder) + 'px';
+
     }
   }
 }
-
-
-
-// creation de personnages
-// class Character{
-//   constructor(name) {
-//     this.name=name;
-//   }
-// }
-// let hitman= new Character('hitmain');
-// let robot= new Character('robot');
-// let soldier= new Character('soldier');
-// let zombie= new Character('zombie');
-//
-// let pTableau = [hitman, robot, soldier,zombie];
-//
-//
-// for (let i = 0; i < pTableau.length; i++) {
-//
-//   console.log(pTableau[i])
 //
 // };
 
