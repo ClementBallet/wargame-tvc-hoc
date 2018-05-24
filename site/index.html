@@ -39,21 +39,22 @@
           <h2>Sélection du personnage</h2>
       <ul id="character-selector" >
         <li id="hitman">
+          <a href="#" class="character" data-character="hitman">
             <img src="img/hitman.png" alt="Perso 1">
           </a>
         </li>
         <li id="robot">
-          <a href="#" class="character" data-character="P2">
+          <a href="#" class="character" data-character="robot">
             <img src="img/robot.png" alt="Perso2">
           </a>
         </li>
         <li id="soldier">
-          <a href="#" class="character" data-character="P3">
+          <a href="#" class="character" data-character="soldier">
               <img src="img/soldier.png" alt="Perso3">
           </a>
         </li>
         <li id="zombie">
-          <a href="#" class="character" data-character="P4">
+          <a href="#" class="character" data-character="zombie">
             <img src="img/zombie.png" alt="Perso4">
           </a>
         </li>
@@ -66,10 +67,11 @@
           <a href="" class="eightbit-btn">Play Game</a>
       </div>
 
-  <!--EOF Div Personnages  -->
+  <!--EOF Div Start  -->
 
+<!--BOF Div Game  -->
     </section>
-    <section id="game">
+    <section id="game" class="displayHidden">
       <section id="score">
       </section>
       <section id ="playZone">
@@ -77,15 +79,14 @@
         </table>
       </section>
     </section>
+    <!--EOF Div Game  -->
     </div>
 
+    <script type="text/javascript" src="app/js/UIHomePage.js"></script>
+    <script type="text/javascript" src="app/js/app.js"></script>
     <script type="text/javascript" src="app/js/map.js"></script>
     <script type="text/javascript" src="app/js/character.js"></script>
     <script type="text/javascript" src="app/js/GamePage.js"></script>
-    <script type="text/javascript" src="app/js/UIHomePage.js"></script>
-    <script type="text/javascript" src="app/js/app.js"></script>
-
-
     <script type="text/javascript">
         function init(){
             const app = new App();

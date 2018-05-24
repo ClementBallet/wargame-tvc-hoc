@@ -4,6 +4,7 @@ class UIHomePage {
 
         this.initDOMElements();
         this.initEvents();
+        this.clearInputsValue();
     }
 
     initDOMElements() {
@@ -12,11 +13,12 @@ class UIHomePage {
         this.inputPlayerTwo = this.el.querySelector('#pseudo2');
         this.characterSelector = this.el.querySelector('#character-selector');
         this.charactersList = this.characterSelector.querySelectorAll('.character');
-
+        this.startButton = this.el.querySelector('.start')
     }
 
+
+
     initEvents() {
-      console.log('lala')
         // Events on inputs
         this.inputPlayerOne.addEventListener('keyup', this.onChangeInput.bind(this));
         this.inputPlayerTwo.addEventListener('keyup', this.onChangeInput.bind(this));
@@ -26,6 +28,20 @@ class UIHomePage {
             let a = this.charactersList[i];
             a.addEventListener('click', this.onChooseCharacter.bind(this));
         }
+
+
+        // Event on Start button
+        this.startButton.addEventListener('click', this.onClickStartButton.bind(this));
+    }
+
+    clearInputsValue() {
+      this.inputPlayerOne.value = '';
+      this.inputPlayerTwo.value = '';
+    }
+
+    onChangeInput(event) {
+      let pseudo = event.target.value;
+    }
 
     }
 // check if input required
@@ -73,9 +89,27 @@ class UIHomePage {
 
         let characterChosen = event.target.parentElement.dataset.character;
         this.app.onChooseCharacter(characterChosen);
-
-            
     }
+
+    checkButtonStart() {
+        if (this.app.characterGamer1) {
+            
+        } else {
+
+        }
+        if (this.app.characterGamer2) {
+            
+        } else {
+
+        }
+    }
+
+    onClickStartButton(event) {
+      event.preventDefault();
+
+      this.app.gotoGame();
+    };
+
 
 
     render() {

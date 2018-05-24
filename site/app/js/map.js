@@ -19,8 +19,6 @@ class Map {
     this.fillMap();
   }
 
-
-
   createMap() {
     let i = 0;
     let j = 0;
@@ -30,7 +28,7 @@ class Map {
     for (j = 0; j < 12; j++){
       tr = document.createElement("tr")
       document.querySelector('#map').appendChild(tr)
-      console.log('test');
+
       for (i = 0; i < 20; i++) {
         td = document.createElement("td")
         td.style.display = 'inline-block'
@@ -39,7 +37,6 @@ class Map {
       }
     }
   }
-
 
   fillMap() {
     let t = 0;
