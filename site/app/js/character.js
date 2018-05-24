@@ -18,11 +18,13 @@ class character {
   }
 
   createCharacter(){
+
     let playzone = document.querySelector('#playZone');
     this.characterBody = document.createElement('div');
     console.log(playzone);
     playzone.appendChild(this.characterBody);
     this.characterBody.classList.add(this.className, this.startRotateClassName, 'player_avatar', 'characterSheet');
+
 
     this.characterBody.style.left = this.startPositionX + 'px';
     this.characterBody.style.top = this.startPositionY + 'px';
@@ -114,6 +116,7 @@ class character {
     if (this.moveUp == true && this.moveLeft == true) {
       clearClassRotate
 
+
       this.rotateClassName = "rotateLess135";
       //this.characterBody.classList.add("rotateLess135");
       this.characterBody.style.top = (PositionY - step) + "px";
@@ -152,17 +155,18 @@ class character {
     }
   }
 }
-//
-// };
 
-// function characterPlayerSelected (contour)
-// {
-// 	if(contour == 1){
-// 		$('character-playerOne-isselected').css('border','5px outset lawngreen');
-// 		document.querySelector('character-playerOne-isselected').value = 1;
-// 	}
-//   if(contour == 2){
-// 		$('character-playerTwo-isselected').css('border','5px outset #f00c93');
-// 		document.getElementById('#').value = 2;
-// 	}
-// }
+
+
+// function characterPlayerSelected (contour){
+
+//
+//   	if(contour == 1){
+//   		$('character-playerOne-isselected').css('border','5px outset lawngreen');
+//   		document.querySelector('.character-playerOne-isselected').value = 1;
+//   	}
+//     if(contour == 2){
+//   		$('character-playerTwo-isselected').css('border','5px outset #f00c93');
+//   		document.getElementById('#').value = 2;
+//   	}
+//   }
