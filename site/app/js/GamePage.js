@@ -16,6 +16,9 @@ class GamePage {
     this.player1 = new character((this.app.characterGamer1 + 'Idle'), (this.app.characterGamer1 + 'Move'), 80, 80, "rotate90", "bullet1");
     this.player2 = new character((this.app.characterGamer2 + 'Idle'), (this.app.characterGamer2 + 'Move'), 1150, 645, "rotateLess90", "bullet2");
 
+    this.player1.collisionList.push(this.player2);
+    this.player2.collisionList.push(this.player1);
+
     this.controlP1 = new controller(this.player1, 81, 90, 68, 83, 32);
     this.controlP2 = new controller(this.player2, 37, 38, 39, 40, 13);
   }

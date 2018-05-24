@@ -1,8 +1,9 @@
 class bullet {
-  constructor(className, rotateClassName, player) {
+  constructor(className, rotateClassName, player, collisionList) {
     this.classNameBullet = className;
     this.rotateClassName = rotateClassName;
     this.character = player;
+    this.collisionList = collisionList;
 
     this.rebond = 3;
 
@@ -213,4 +214,29 @@ class bullet {
 
     }
 
-  };
+    checkCollision() {
+       for (let i = 0; i < this.collisionList.length; i++) {
+
+         let bulletTop = this.bullet.offsetTop;
+         let bulletLeft = this.bullet.offsetLeft;
+         let bulletWidth = this.bullet.offsetWidth;
+         let bulletHeight = this.bullet.offsetHeight;
+         let bulletRight = bulletLeft + bulletWidth;
+         let bulletBottom = bulletTop + bulletHeight;
+
+         let objectTop = this.collisionList[i].characterBody.offsetTop;
+         let objectLeft = this.collisionList[i].characterBody.offsetLeft;
+         let objectWidth = this.collisionList[i].characterBody.offsetWidth;
+         let objectHeight = this.collisionList[i].characterBody.offsetHeight;
+         let objectRight = objectLeft + objectWidth;
+         let objectBottom = objectTop + objectHeight;
+
+         if (bulletTop > objectTop && bulletTop < objectBottom && bulletLeft > objectLeft && bulletLeft < objectRight) {
+            this.collisionList[i].life--
+            this.destroyBullet()
+         }
+       }
+    }
+
+
+};

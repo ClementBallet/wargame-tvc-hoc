@@ -11,6 +11,8 @@ class character {
 
       this.rotateClassName = this.startRotateClassName;
 
+      this.collisionList = [];
+
       this.moveUp = false;
       this.moveLeft = false;
       this.moveDown = false;
@@ -37,6 +39,7 @@ class character {
 
     for(let i = 0; i < this.bullets.length; i++){
       this.bullets[i].moveBullet();
+      this.bullets[i].checkCollision();
 
       if(this.bullets[i].isDestroy == true){
         this.bullets.splice(i, 1);
@@ -165,10 +168,8 @@ class character {
   }
 
   shoot(){
-      let b = new bullet(this.classNameBullet, this.rotateClassName, this);
+      let b = new bullet(this.classNameBullet, this.rotateClassName, this, this.collisionList);
       this.bullets.push(b);
-      console.log(this.bullets)
-
   }
 
 
