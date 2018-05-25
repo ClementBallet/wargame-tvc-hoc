@@ -9,7 +9,7 @@
 
 
 
-/* Style du bouton de base 
+/* Style du bouton de base
 Classe .eightbit-btn à appliquer à tous les boutons */
 .eightbit-btn {
     background: #92CD41;
@@ -24,6 +24,7 @@ Classe .eightbit-btn à appliquer à tous les boutons */
     box-shadow: inset -4px -4px 0px 0px #4AA52E;
     margin: 30px;
 }
+
 .eightbit-btn:hover, .eightbit-btn:focus {
     background: #76c442;
     box-shadow: inset -6px -6px 0px 0px #4AA52E;
@@ -78,4 +79,3 @@ Classes .eightbit-btn et .eightbit-btn--proceed à appliquer */
 .eightbit-btn--proceed:active {
     box-shadow: inset 4px 4px 0px 0px #E59400;
 }
-

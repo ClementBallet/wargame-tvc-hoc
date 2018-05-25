@@ -48,11 +48,14 @@ class UIHomePage {
 
         let characterChosen = event.target.parentElement.dataset.character;
         this.app.onChooseCharacter(characterChosen);
+        this.app.addSelectionFrame(characterChosen);
     }
 
     onClickStartButton(event) {
       event.preventDefault();
 
       this.app.gotoGame();
-    };
+    }
+
+
 }

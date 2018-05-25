@@ -36,6 +36,7 @@ ul {
   width: 1280;
   height: 120px;
   display: flex;
+  background-color: darkseagreen;
 }
 
 #scorePlayerOne, #scorePlayerTwo {
@@ -75,11 +76,22 @@ ul {
   width: 100%;
   height: 100vh;
   margin:0 auto;
-  background-color: black;
-  opacity: 0.5;
   position: absolute;
+  background-color: rgba(0,0,0,0.5);
   z-index: 9999;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.GameOverText {
+  font-size: 72px;
+  margin: auto;
+  color: aqua;
+  z-index: 10001;
+  margin-bottom: 20px;
 }
 
 /* Style div title */
@@ -173,11 +185,11 @@ ul {
 }
 
 .character-playerOne-isselected {
-  border: 5px outset lawngreen;
+  border: 5px outset lawngreen !important;
 }
 
 .character-playerTwo-isselected {
-  border: 5px outset #f00c93;
+  border: 5px outset #f00c93 !important;
 }
 
 #character-selector li a {

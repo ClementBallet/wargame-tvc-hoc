@@ -16,6 +16,7 @@ class Map {
     ];
 
     this.createMap();
+    this.map = null;
     this.fillMap();
   }
 
@@ -24,6 +25,12 @@ class Map {
     let j = 0;
     let td = null;
     let tr = null;
+
+    let playzone = document.querySelector('#playZone');
+    this.map = document.createElement('table');
+
+    playzone.appendChild(this.map)
+    this.map.setAttribute('id', 'map');
 
     for (j = 0; j < 12; j++){
       tr = document.createElement("tr")
