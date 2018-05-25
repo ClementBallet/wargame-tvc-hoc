@@ -11,7 +11,6 @@ class bullet {
     this.bulletSpeedY = 10;
 
     this.isDestroy = false;
-
     this.createBullet();
   };
 
@@ -232,7 +231,8 @@ class bullet {
          let objectBottom = objectTop + objectHeight;
 
          if (bulletTop > objectTop && bulletTop < objectBottom && bulletLeft > objectLeft && bulletLeft < objectRight) {
-            this.collisionList[i].life--
+            //this.collisionList[i].life--
+            this.collisionList[i].loseLife();
             this.destroyBullet()
          }
        }

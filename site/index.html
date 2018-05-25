@@ -8,6 +8,10 @@
     <link rel="stylesheet" href='app/css/app.css'>
 </head>
 <body onload="init()">
+  <!--BOF Div GameOver  -->
+  <section id="gameOver" class="displayHidden">
+  </section>
+  <!--EOF Div GameOver  -->
   <div id="app">
     <section id="homepage">
 
@@ -71,6 +75,14 @@
     </section>
     <section id="game" class="displayHidden">
       <section id="score">
+        <div id="scorePlayerOne">
+          <h1 id="playerName1"></h1>
+          <div class='hearts'></div>
+        </div>
+        <div id="scorePlayerTwo">
+          <h1 id="playerName2"></h1>
+          <div class='hearts'></div>
+        </div>
       </section>
       <section id ="playZone">
         <table id ="map">
@@ -86,6 +98,7 @@
     <script type="text/javascript" src="app/js/character.js"></script>
     <script type="text/javascript" src="app/js/GamePage.js"></script>
     <script type="text/javascript" src="app/js/bullet.js"></script>
+    <script type="text/javascript" src="app/js/GameOver.js"></script>
     <script type="text/javascript">
         function init(){
             const app = new App();

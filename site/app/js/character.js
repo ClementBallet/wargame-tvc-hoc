@@ -1,5 +1,6 @@
 class character {
-  constructor(classNameIdle, classNameMove, startPositionX, startPositionY, startRotateClassName, classNameBullet) {
+  constructor(app, classNameIdle, classNameMove, startPositionX, startPositionY, startRotateClassName, classNameBullet, life) {
+      this.app = app;
       this.className = classNameIdle;
       this.classNameMove = classNameMove;
       this.startPositionX = startPositionX;
@@ -7,7 +8,7 @@ class character {
       this.startRotateClassName = startRotateClassName;
       this.classNameBullet = classNameBullet;
       this.characterBody = null;
-      this.life = 3;
+      this.life = life;
 
       this.rotateClassName = this.startRotateClassName;
 
@@ -32,6 +33,12 @@ class character {
 
     this.characterBody.style.left = this.startPositionX + 'px';
     this.characterBody.style.top = this.startPositionY + 'px';
+  }
+
+  loseLife(){
+      this.life--;
+      console.log(this.app)
+      this.app.GamePage.renderHeartLife()
   }
 
   render(){
@@ -171,12 +178,5 @@ class character {
       let b = new bullet(this.classNameBullet, this.rotateClassName, this, this.collisionList);
       this.bullets.push(b);
   }
-
-  // isgameFinished() {
-  //   if (this.life == 0) {
-  //     app.gotoGameOver()
-  //   }
-  // }
-
 
 }

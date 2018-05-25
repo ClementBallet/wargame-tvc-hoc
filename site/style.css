@@ -32,7 +32,41 @@ ul {
   display: none !important;
 }
 
-#game {
+#score {
+  width: 1280;
+  height: 120px;
+  display: flex;
+}
+
+#scorePlayerOne, #scorePlayerTwo {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hearts {
+  display: flex;
+}
+
+.heart {
+  background-image: url('img/heart.png');
+  width: 80px;
+  height: 70px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#gameOver {
+  width: 100%;
+  height: 100vh;
+  margin:0 auto;
+  background-color: black;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 9999;
+  display: flex;
 }
 
 /* Style div title */

@@ -4,7 +4,7 @@ class UIHomePage {
 
         this.initDOMElements();
         this.initEvents();
-        this.clearInputsValue();
+        // this.clearInputsValue();
     }
 
     initDOMElements() {
@@ -34,10 +34,10 @@ class UIHomePage {
         this.startButton.addEventListener('click', this.onClickStartButton.bind(this));
     }
 
-    clearInputsValue() {
-      this.inputPlayerOne.value = '';
-      this.inputPlayerTwo.value = '';
-    }
+    // clearInputsValue() {
+    //   this.inputPlayerOne.value = '';
+    //   this.inputPlayerTwo.value = '';
+    // }
 
     onChangeInput(event) {
       let pseudo = event.target.value;
@@ -55,8 +55,4 @@ class UIHomePage {
 
       this.app.gotoGame();
     };
-
-    render() {
-
-    }
 }

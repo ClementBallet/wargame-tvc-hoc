@@ -2,9 +2,12 @@ class App {
 
     constructor() {
         this.gameStarted = false;
+        this.gameFinished = false;
 
         this.characterGamer1 = null;
         this.characterGamer2 = null;
+
+        this.gameOver = null;
     }
 
     init() {
@@ -56,11 +59,19 @@ class App {
     }
 
     gotoGame(){
-      document.querySelector('#homepage').classList.add('displayHidden')
-      document.querySelector('#game').classList.remove('displayHidden')
+      document.querySelector('#homepage').classList.add('displayHidden');
+      document.querySelector('#game').classList.remove('displayHidden');
 
       this.gameStarted = true;
 
       this.GamePage.init();
+    }
+
+    gotoEnd() {
+      document.querySelector('#gameOver').classList.remove('displayHidden');
+
+      this.gameFinished = true;
+
+      this.gameOver = new GameOver(this);
     }
 }

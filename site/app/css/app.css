@@ -7,6 +7,12 @@
   border-collapse: collapse;
 }
 
+.GameOverText {
+  font-size: 88px;
+  margin: auto;
+  color: aqua;
+}
+
 .spriteSheet {
   background-image: url('../../assets/allSprites_default1.png');
   background-repeat: no-repeat;
