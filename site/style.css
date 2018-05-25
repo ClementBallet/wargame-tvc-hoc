@@ -46,8 +46,21 @@ ul {
   align-items: center;
 }
 
+.playerName {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
 .hearts {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+  height: 100%;
 }
 
 .heart {

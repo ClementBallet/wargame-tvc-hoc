@@ -30,7 +30,6 @@ class GamePage {
       this.player1.render();
       this.player2.render();
       this.isGameFinished();
-      //this.loseHeart();
     }
   }
 
@@ -63,23 +62,6 @@ class GamePage {
       divOneHeart.classList.add("heart");
     }
   }
-
-  loseHeart() {
-    let lifePlayer1 = this.player1.life;
-    let lifePlayer2 = this.player2.life;
-    let allHeartP1 = document.querySelector('#scorePlayerOne');
-    let allHeartP2 = document.querySelector('#scorePlayerTwo');
-    let divHeartPlayer1 = allHeartP1.querySelectorAll('.heart');
-    let divHeartPlayer2 = allHeartP2.querySelectorAll('.heart');
-
-    for (let i = 0; i < divHeartPlayer1.length; i++) {
-      if (lifePlayer1-- && lifePlayer1 > 0) {
-        allHeartP1.removeChild(divHeartPlayer1[2]);
-      }
-    }
-
-  }
-
 }
 
 
